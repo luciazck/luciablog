@@ -3,17 +3,13 @@
         <title>Lucia's blog</title>
     </head>
     <body>
+{% for post in posts %}
         <div>
-            <h1><a href="http://127.0.0.1:8000/">Blog 1</a></h1>
-        <p>Published: 12.03.2017</p>
+            <h1><a href="http://127.0.0.1:8000/">{{ post.title }}</a></h1>
+        <p>Published: {{ post.published_date }}</p>
+<p>{{ post.text|linebreaksbr }}</p>
         </div>
-        <div>
-            <h1><a href="http://127.0.0.1:8000/">Blog 2</a></h1>
-        <p>Published: 12.03.2017</p>
-        </div>
-        <div>
-        <h1><a href="http://127.0.0.1:8000/">Blog 3</a></h1>
-        <p>Published: 12.03.2017</p>
-        </div>
+{% endfor %}
+       
     </body>
 </html>
